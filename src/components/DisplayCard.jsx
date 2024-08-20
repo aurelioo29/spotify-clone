@@ -28,12 +28,13 @@ const DisplayCard = () => {
               src={assets.spotify_logo}
               alt=""
             />
-            <b>Spotify</b>• 1,323,154 likes • <b>50 songs,</b>
+            <b className="ml-2">Spotify</b> • 1,323,154 likes •{" "}
+            <b>50 songs, </b>
             about 2 hr 30 min
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 mt-10 mb-4 pl-2 text-[#a7a7a7]">
+      <div className="grid grid-cols-4 sm:grid-cols-4 mt-10 mb-4 pl-2 text-[#a7a7a7]">
         <p>
           <b className="mr-4">#</b>Title
         </p>
@@ -53,8 +54,8 @@ const DisplayCard = () => {
             <img className="inline w-10 mr-5" src={item.image} alt="" />
             {item.name}
           </p>
-          <p className="text-[15px]">{albumData.name}</p>
-          <p className="text-[15px] hidden sm:block">5 days ago</p>
+          <p className="text-[15px]">{item.author}</p>
+          <p className="text-[15px] hidden sm:block">10 days ago</p>
           <p className="text-[15px] text-center">{item.duration}</p>
         </div>
       ))}
