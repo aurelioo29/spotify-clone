@@ -67,14 +67,20 @@ const PlayContextProvider = (props) => {
           Math.floor(
             (audioRef.current.currentTime / audioRef.current.duration) * 100
           ) + "%";
+
+        const currentSeconds = Math.floor(audioRef.current.currentTime % 60);
+        const currentMinutes = Math.floor(audioRef.current.currentTime / 60);
+        const totalSeconds = Math.floor(audioRef.current.duration % 60);
+        const totalMinutes = Math.floor(audioRef.current.duration / 60);
+
         setTime({
           currentTime: {
-            second: Math.floor(audioRef.current.currentTime % 60),
-            minute: Math.floor(audioRef.current.currentTime / 60),
+            second: currentSeconds.toString().padStart(2, "0"),
+            minute: currentMinutes.toString().padStart(2, "0"),
           },
           totalTime: {
-            second: Math.floor(audioRef.current.duration % 60),
-            minute: Math.floor(audioRef.current.duration / 60),
+            second: totalSeconds.toString().padStart(2, "0"),
+            minute: totalMinutes.toString().padStart(2, "0"),
           },
         });
       };
